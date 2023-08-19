@@ -1,0 +1,197 @@
+body {
+    display: inline-block;
+    font-size: 18px;
+    font-family: 'Hanken Grotesk', sans-serif;
+}
+* {
+    box-sizing: border-box;
+}
+:root {
+    /* ### Primary */
+    --LightRed: hsl(0, 100%, 67%);
+    --OrangeYellow: hsl(39, 100%, 56%);
+    --GreenTeal: hsl(166, 100%, 37%);
+    --CobaltBlue: hsl(234, 85%, 45%);
+
+/* ## Gradients */
+    --LightslateBlue: hsl(252, 100%, 67%); /*background*/
+    --LightroyalBlue: hsl(241, 81%, 54%); /*background*/
+    --VioletBlue: hsla(256, 72%, 46%, 1); /*circle*/
+    --PersianBlue: hsla(241, 72%, 46%, 0); /*circle*/
+
+    /* ### Neutral */
+    --White: hsl(0, 0%, 100%);
+    --PaleBlue: hsl(221, 100%, 96%);
+    --LightLavender: hsl(241, 100%, 89%);
+    --DarkGrayBlue: hsl(224, 30%, 27%);
+}
+
+.parent {
+    width: 1440px;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+}
+.parent .section {
+    padding: 50px;
+    border-radius: 75px;
+}
+.parent .section-1 {
+    background: linear-gradient(to top, var(--LightroyalBlue) 60%, var(--LightslateBlue));
+    grid-column: 1;
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto repeat(4, 1fr);
+    align-items: center;
+    padding: 75px;
+    color: var(--White);
+    text-align: center;
+}
+.parent .section-1 .result {
+    width: 50%;
+    margin: 0 auto;
+    padding-bottom: 50px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 500;
+    grid-row: 1;
+}
+.parent .section-1 .average {
+    opacity: .5;
+    font-size: 40px;
+}
+.parent .section-1 div:nth-child(2) {
+    grid-row: 2/4;
+    background: linear-gradient(to bottom, var(--VioletBlue) , var(--PersianBlue));
+    width: 75%;
+    height: 115%;
+    margin: auto;
+    display: grid;
+    place-content: center;
+    font-weight: 500;
+    font-size: 50px;
+    border-radius: 50%;
+}
+.parent .section-1 div:nth-child(2) .num {
+    display: block;
+    font-size: 150px;
+    font-weight: 800;
+}
+.parent .section-1 .great {
+    grid-row: 4;
+    font-size: 50px;
+    font-weight: 800;
+    margin-top: 75px;
+}
+.parent .section div:last-child {
+    grid-row: 5;
+    font-size: 25px;
+    padding: 0 0px;
+}
+.v1 {
+    opacity: .5;
+}
+.parent .section-2 {
+    grid-column: 2;
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 20px;
+}
+.parent .section-2 h3 {
+    grid-row: 1;
+    font-size: 40px;
+    font-weight: 700;                                                                           
+}
+.parent .section-2 div {
+    display: flex;
+    padding: 6%;
+    justify-content: space-between;
+    font-size: 35px;
+    font-weight: 700;
+}
+.parent .section-2 div .s {
+  width: 300px;
+}
+.s1 {
+    color: var(--LightRed);
+}
+.s2 {
+    color: var(--OrangeYellow);
+}
+.s3 {
+    color: var(--GreenTeal);
+}
+.s4 {
+    color: var(--CobaltBlue);
+}
+.a-100 {
+    opacity: .5;
+}
+.parent .section-2 div:nth-child(n+2):not(.parent .section-2 div:nth-child(6)) {
+    border-radius: 15px;
+}
+.parent .section-2 div:nth-child(2) {
+    background-color: hsla(0, 100%, 67%, 0.25);
+    grid-row: 2;
+}
+.parent .section-2 div:nth-child(3) {
+    grid-row: 3;
+    background-color: hsla(39, 100%, 56%, 0.25);
+}
+.parent .section-2 div:nth-child(4) {
+    grid-row: 4;
+    background-color: hsla(166, 100%, 37%, 0.25);
+}
+.parent .section-2 div:nth-child(5) {
+    grid-row: 5;
+    background-color: hsla(234, 85%, 45%, 0.25);
+}
+.parent .section div:nth-child(6) {
+    grid-row: 6;
+}
+.parent .section div:nth-child(6) input {
+    border: none;
+    border-radius: 100px;
+    background-color: var(--DarkGrayBlue);
+    color: white;
+    position: relative;
+    top: 20px;
+    font-size: 35px;
+    margin-top: 35px;
+    flex-basis: 100%;
+    cursor: pointer;
+}
+.parent .section-2 div:nth-child(6) input:hover {
+    background: linear-gradient(to bottom, var(--LightroyalBlue) 0%, var(--LightslateBlue) 400%)
+}
+.attribution {
+    position: relative;
+    left: 50%;
+    top: 20px;
+}
+@media (min-width: 375px) and (max-width: 1006px) {
+    .parent {
+        margin-top: 265px;
+        width: 715px;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+    }
+    .parent .section-1 {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    .parent .section-2 {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    .attribution {
+        left: 0%;
+    }
+}
